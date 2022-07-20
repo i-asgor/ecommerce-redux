@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ReactLoading from 'react-loading';
 
 const Products = () => {
 
@@ -25,18 +26,26 @@ const Products = () => {
         getProducts();
     },[]);
 
-    const Loading = () => {
-        return <>Loading...</>;
+    const Loading = ({ type, color }) => {
+        return <>
+            <ReactLoading type={type} color={color} height={'20%'} width={'20%'} />
+        </>;
+    }
+
+    const filterProduct = (list) => {
+        const updatedData = data.filter((a)=>a.category === list);
+        setFilter(updatedData);
     }
 
     const ShowProducts = () => {
         return (
             <>
                 <div className="buttons d-flex justify-content-center mb-5 pb-5">
-                    <button className="btn btn-outline-dark me-2">All</button>
-                    <button className="btn btn-outline-dark me-2">Men's Clothing</button>
-                    <button className="btn btn-outline-dark me-2">Women's Clothing</button>
-                    <button className="btn btn-outline-dark me-2">Child's Clothing</button>
+                    <button className="btn btn-outline-dark me-2" onClick={()=>setFilter(data)}>All</button>
+                    <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("men's clothing")}>Men's Clothing</button>
+                    <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("women's clothing")}>Women's Clothing</button>
+                    <button className="btn btn-outline-dark me-2"  onClick={()=>filterProduct("child's clothing")}>Child's Clothing</button>
+                    <button className="btn btn-outline-dark me-2"  onClick={()=>filterProduct("electronics")}>Electronics</button>
                 </div>
                 {filter.map((product)=>{
                     return(
