@@ -4,7 +4,7 @@ import Products from './Products';
 const Home = () => {
     return (
         <div className='hero'>
-            <div className="card text-light">
+            <div className="card text-white">
             <img src="/assets/slider/2.png" className="card-img" alt="background" height="550px" />
             <div className="card-img-overlay d-flex flex-column justify-content-center">
                 <div className="container">
