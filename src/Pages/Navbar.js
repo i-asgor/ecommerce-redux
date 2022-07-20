@@ -1,41 +1,42 @@
 import React from 'react';
+import { NavLink} from "react-router-dom";
 
 const Navbar = () => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">
-                    <a className="navbar-brand fw-bold fs-4" href="#">
+                    <NavLink className="navbar-brand fw-bold fs-4" to="/">
                         E-Commerce
-                    </a>
+                    </NavLink>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="#">Home</a>
+                        <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
                         </li>
                         <li className="nav-item">
-                        <a className="nav-link" href="#">Products</a>
+                        <NavLink className="nav-link" to="/products">Products</NavLink>
                         </li>
                         <li className="nav-item">
-                        <a className="nav-link" href="#">About</a>
+                        <NavLink className="nav-link" to="/about">About</NavLink>
                         </li>
                         <li className="nav-item">
-                        <a className="nav-link" href="#">Contact</a>
+                        <NavLink className="nav-link" to="/contact">Contact</NavLink>
                         </li>
                     </ul>
                    <div className="buttons">
-                    <a href="" className='btn btn-outline-light'>
+                    <NavLink to="/login" className='btn btn-outline-light'>
                         <i className="fa fa-sign-in"><span className='ms-1'>Sign In</span></i>
-                    </a>
-                    <a href="" className='btn btn-outline-light ms-2'>
+                    </NavLink>
+                    <NavLink to="/register" className='btn btn-outline-light ms-2'>
                         <i className="fa fa-user-plus"><span className='ms-1'>Sign Up</span></i>
-                    </a>
-                    <a href="" className='btn btn-outline-light ms-2'>
+                    </NavLink>
+                    <NavLink to="/cart" className='btn btn-outline-light ms-2'>
                         <i className="fa fa-shopping-cart"><span className='ms-1'>Cart (0)</span></i>
-                    </a>
+                    </NavLink>
                    </div>
                     </div>
                 </div>
